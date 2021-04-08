@@ -1,0 +1,69 @@
+BEGIN
+lineitem 857316 ,lineitem 1
+l_discount 11
+l_returnflag 3
+l_shipmode 7
+END
+***************************************************************************************************************************************
+BEGIN
+customer 1500000 ,orders,customer,nation 3
+c_custkey 150000
+c_nationkey 25
+END
+BEGIN
+nation 1500000 ,orders,customer,nation 3
+n_nationkey 25
+END
+BEGIN
+orders 1500000 ,orders,customer,nation 3
+o_custkey 150000
+END
+***************************************************************************************************************************************
+BEGIN
+customer 400081 ,customer,orders,lineitem 3
+c_custkey 150000
+c_mktsegment 5
+END
+BEGIN
+lineitem 400081 ,customer,orders,lineitem 3
+l_orderkey 1500000
+END
+BEGIN
+orders 400081 ,customer,orders,lineitem 3
+o_custkey 150000
+o_orderdate 99996
+o_orderkey 1500000
+END
+***************************************************************************************************************************************
+BEGIN
+customer 2000405 ,customer,orders,lineitem,nation 4
+c_custkey 150000
+c_nationkey 25
+END
+BEGIN
+lineitem 2000405 ,customer,orders,lineitem,nation 4
+l_orderkey 1500000
+END
+BEGIN
+nation 2000405 ,customer,orders,lineitem,nation 4
+n_nationkey 25
+END
+BEGIN
+orders 2000405 ,customer,orders,lineitem,nation 4
+o_custkey 150000
+o_orderdate 99996
+o_orderkey 1500000
+END
+***************************************************************************************************************************************
+BEGIN
+lineitem 21433 ,part,lineitem 2
+l_partkey 200000
+l_shipinstruct 4
+l_shipmode 7
+END
+BEGIN
+part 21433 ,part,lineitem 2
+p_container 40
+p_partkey 200000
+END
+***************************************************************************************************************************************

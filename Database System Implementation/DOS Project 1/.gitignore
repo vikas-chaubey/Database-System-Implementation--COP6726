@@ -1,0 +1,6 @@
+Makefile
+*.o
+*.exe
+*.json
+
+dbfiles/

@@ -1,0 +1,91 @@
+BEGIN
+customer 0 customer 1
+c_acctbal 0
+c_address 0
+c_comment 0
+c_custkey 0
+c_mktsegment 0
+c_name 0
+c_nationkey 0
+c_phone 0
+END
+BEGIN
+lineitem 0 lineitem 1
+l_comment 0
+l_commitdate 0
+l_discount 0
+l_extendedprice 0
+l_linenumber 0
+l_linestatus 0
+l_orderkey 0
+l_partkey 0
+l_quantity 0
+l_receiptdate 0
+l_returnflag 0
+l_shipdate 0
+l_shipinstruct 0
+l_shipmode 0
+l_suppkey 0
+l_tax 0
+END
+BEGIN
+mytable 0 mytable 1
+att1 0
+att2 0
+att3 0
+END
+BEGIN
+nation 0 nation 1
+n_comment 0
+n_name 0
+n_nationkey 0
+n_regionkey 0
+END
+BEGIN
+orders 0 orders 1
+o_clerk 0
+o_comment 0
+o_custkey 0
+o_orderdate 0
+o_orderkey 0
+o_orderpriority 0
+o_orderstatus 0
+o_shippriority 0
+o_totalprice 0
+END
+BEGIN
+part 0 part 1
+p_brand 0
+p_comment 0
+p_container 0
+p_mfgr 0
+p_name 0
+p_partkey 0
+p_retailprice 0
+p_size 0
+p_type 0
+END
+BEGIN
+partsupp 0 partsupp 1
+ps_availqty 0
+ps_comment 0
+ps_partkey 0
+ps_suppkey 0
+ps_supplycost 0
+END
+BEGIN
+region 0 region 1
+r_comment 0
+r_name 0
+r_regionkey 0
+END
+BEGIN
+supplier 0 supplier 1
+s_acctbal 0
+s_address 0
+s_comment 0
+s_name 0
+s_nationkey 0
+s_phone 0
+s_suppkey 0
+END

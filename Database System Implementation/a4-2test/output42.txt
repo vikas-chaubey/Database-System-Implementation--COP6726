@@ -1,0 +1,259 @@
+TC1
+-----------------------------------
+ SELECT FILE OPERATION
+ Output Pipe ID 1
+ Output Schema:
+        Att n.n_nationkey : Int 
+        Att n.n_name : String 
+        Att n.n_regionkey : Int 
+        Att n.n_comment : String 
+ Select CNF:
+ ( n.n_name = UNITED STATES) 
+-----------------------------------
+-----------------------------------
+ PROJECT OPERATION
+ Input Pipe ID : 1
+ Output Pipe ID 2
+ Number Attrs Input : 4
+ Number Attrs Output : 1
+ Attrs To Keep : [0]
+ Output Schema:
+        Att n.n_nationkey : Int 
+-----------------------------------
+***************************************************************************************************************************
+TC2
+-----------------------------------
+ SELECT FILE OPERATION
+ Output Pipe ID 1
+ Output Schema:
+        Att n.n_nationkey : Int 
+        Att n.n_name : String 
+        Att n.n_regionkey : Int 
+        Att n.n_comment : String 
+ Select CNF:
+ ( n.n_nationkey > 5) 
+-----------------------------------
+-----------------------------------
+ SELECT FILE OPERATION
+ Output Pipe ID 3
+ Output Schema:
+        Att r.r_regionkey : Int 
+        Att r.r_name : String 
+        Att r.r_comment : String 
+ Select CNF:
+-----------------------------------
+-----------------------------------
+ JOIN OPERATION
+ Left Input Pipe ID : 1
+ Right Input Pipe ID : 3
+ Output Pipe ID : 2
+ Output Schema : 
+        Att n.n_nationkey : Int 
+        Att n.n_name : String 
+        Att n.n_regionkey : Int 
+        Att n.n_comment : String 
+        Att r.r_regionkey : Int 
+        Att r.r_name : String 
+        Att r.r_comment : String 
+ Join CNF : 
+ ( n.n_regionkey = r.r_regionkey) 
+-----------------------------------
+-----------------------------------
+ PROJECT OPERATION
+ Input Pipe ID : 2
+ Output Pipe ID 4
+ Number Attrs Input : 7
+ Number Attrs Output : 1
+ Attrs To Keep : [0]
+ Output Schema:
+        Att n.n_name : String 
+-----------------------------------
+***************************************************************************************************************************
+TC3
+-----------------------------------
+ SELECT FILE OPERATION
+ Output Pipe ID 1
+ Output Schema:
+        Att n.n_nationkey : Int 
+        Att n.n_name : String 
+        Att n.n_regionkey : Int 
+        Att n.n_comment : String 
+ Select CNF:
+ ( n.n_name = UNITED STATES) 
+-----------------------------------
+-----------------------------------
+ SELECT FILE OPERATION
+ Output Pipe ID 3
+ Output Schema:
+        Att r.r_regionkey : Int 
+        Att r.r_name : String 
+        Att r.r_comment : String 
+ Select CNF:
+-----------------------------------
+-----------------------------------
+ JOIN OPERATION
+ Left Input Pipe ID : 1
+ Right Input Pipe ID : 3
+ Output Pipe ID : 2
+ Output Schema : 
+        Att n.n_nationkey : Int 
+        Att n.n_name : String 
+        Att n.n_regionkey : Int 
+        Att n.n_comment : String 
+        Att r.r_regionkey : Int 
+        Att r.r_name : String 
+        Att r.r_comment : String 
+ Join CNF : 
+ ( n.n_regionkey = r.r_regionkey) 
+-----------------------------------
+-----------------------------------
+ SUM OPERATION
+ Input Pipe ID : 2
+ Output Pipe ID : 4
+ Function :
+ (n.n_nationkey) 
+ Output Schema:
+        Att sum : Int 
+-----------------------------------
+***************************************************************************************************************************
+TC4
+-----------------------------------
+ SELECT FILE OPERATION
+ Output Pipe ID 1
+ Output Schema:
+        Att n.n_nationkey : Int 
+        Att n.n_name : String 
+        Att n.n_regionkey : Int 
+        Att n.n_comment : String 
+ Select CNF:
+ ( n.n_name = UNITED STATES) 
+-----------------------------------
+-----------------------------------
+ SELECT FILE OPERATION
+ Output Pipe ID 3
+ Output Schema:
+        Att r.r_regionkey : Int 
+        Att r.r_name : String 
+        Att r.r_comment : String 
+ Select CNF:
+-----------------------------------
+-----------------------------------
+ JOIN OPERATION
+ Left Input Pipe ID : 1
+ Right Input Pipe ID : 3
+ Output Pipe ID : 2
+ Output Schema : 
+        Att n.n_nationkey : Int 
+        Att n.n_name : String 
+        Att n.n_regionkey : Int 
+        Att n.n_comment : String 
+        Att r.r_regionkey : Int 
+        Att r.r_name : String 
+        Att r.r_comment : String 
+ Join CNF : 
+ ( n.n_regionkey = r.r_regionkey) 
+-----------------------------------
+-----------------------------------
+ GROUP OPERATION
+ Input Pipe ID : 2
+ Output Pipe ID : 4
+ Output Schema : 
+        Att sum : Int 
+        Att n.n_regionkey : Int 
+ Function : 
+ (n.n_regionkey) 
+ Grouping On : 
+        NumAtts =  1
+        n.n_regionkey : Int
+-----------------------------------
+***************************************************************************************************************************
+TC5
+-----------------------------------
+ SELECT FILE OPERATION
+ Output Pipe ID 1
+ Output Schema:
+        Att n.n_nationkey : Int 
+        Att n.n_name : String 
+        Att n.n_regionkey : Int 
+        Att n.n_comment : String 
+ Select CNF:
+ ( n.n_nationkey > 10) 
+-----------------------------------
+-----------------------------------
+ SELECT FILE OPERATION
+ Output Pipe ID 3
+ Output Schema:
+        Att r.r_regionkey : Int 
+        Att r.r_name : String 
+        Att r.r_comment : String 
+ Select CNF:
+-----------------------------------
+-----------------------------------
+ JOIN OPERATION
+ Left Input Pipe ID : 1
+ Right Input Pipe ID : 3
+ Output Pipe ID : 2
+ Output Schema : 
+        Att n.n_nationkey : Int 
+        Att n.n_name : String 
+        Att n.n_regionkey : Int 
+        Att n.n_comment : String 
+        Att r.r_regionkey : Int 
+        Att r.r_name : String 
+        Att r.r_comment : String 
+ Join CNF : 
+ ( n.n_regionkey = r.r_regionkey) 
+-----------------------------------
+-----------------------------------
+ SELECT FILE OPERATION
+ Output Pipe ID 4
+ Output Schema:
+        Att c.c_custkey : Int 
+        Att c.c_name : String 
+        Att c.c_address : String 
+        Att c.c_nationkey : Int 
+        Att c.c_phone : String 
+        Att c.c_acctbal : Double 
+        Att c.c_mktsegment : String 
+        Att c.c_comment : String 
+ Select CNF:
+-----------------------------------
+-----------------------------------
+ JOIN OPERATION
+ Left Input Pipe ID : 2
+ Right Input Pipe ID : 4
+ Output Pipe ID : 5
+ Output Schema : 
+        Att n.n_nationkey : Int 
+        Att n.n_name : String 
+        Att n.n_regionkey : Int 
+        Att n.n_comment : String 
+        Att r.r_regionkey : Int 
+        Att r.r_name : String 
+        Att r.r_comment : String 
+        Att c.c_custkey : Int 
+        Att c.c_name : String 
+        Att c.c_address : String 
+        Att c.c_nationkey : Int 
+        Att c.c_phone : String 
+        Att c.c_acctbal : Double 
+        Att c.c_mktsegment : String 
+        Att c.c_comment : String 
+ Join CNF : 
+ ( n.n_nationkey = c.c_nationkey) 
+-----------------------------------
+-----------------------------------
+ GROUP OPERATION
+ Input Pipe ID : 5
+ Output Pipe ID : 6
+ Output Schema : 
+        Att sum : Int 
+        Att r.r_regionkey : Int 
+ Function : 
+ ( (n.n_nationkey + r.r_regionkey)) 
+ Distinct Function :  True
+ Grouping On : 
+        NumAtts =  1
+        r.r_regionkey : Int
+-----------------------------------
+***************************************************************************************************************************
